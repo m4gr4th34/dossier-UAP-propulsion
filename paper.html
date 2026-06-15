@@ -82,6 +82,14 @@
   .epi .tag{font-family:var(--mono);font-size:11px;color:var(--teal);border:1px solid var(--teal);padding:2px 7px;margin-right:8px}
   .note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--violet);padding:12px 14px;margin:16px 0;font-size:14.5px;color:var(--ink2)}
   .note b{color:var(--ink)}
+  /* Track A -> Track B bridge */
+  .bridge{background:linear-gradient(0deg,var(--violet-soft),var(--teal-soft));border:1.5px solid var(--violet);border-left:5px solid var(--violet);padding:14px 16px;margin:18px 0;font-size:15.5px}
+  .bridge .tag{font-family:var(--mono);font-size:11px;color:var(--violet);border:1px solid var(--violet);padding:2px 7px;display:inline-block;margin-bottom:8px}
+  .bridge .eq{font-family:var(--mono);font-size:14px;background:var(--card);border:1px solid var(--line);padding:10px 12px;margin:8px 0;text-align:center}
+  /* authorial stance — deliberately a different voice, NOT a claim */
+  .stance{background:#fff;border:2px dashed var(--coral);padding:14px 16px;margin:18px 0;font-size:15.5px;font-style:italic}
+  .stance .tag{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--coral);border:1px solid var(--coral);padding:2px 7px;display:inline-block;margin-bottom:8px}
+  .stance b{font-style:normal}
 </style>
 </head>
 <body>
@@ -157,6 +165,24 @@ the object sat at ~13,000 ft, and its assessed speed was a mundane <b>5–92 mph
 
 <p class="punch">The honest result of Section 1 is a fork, not a verdict: artifact, or unrecorded signature. Resolving it needs better range data, not bolder adjectives.</p>
 
+<h2><span class="num">→</span>The bridge: where Track A ends and Track B opens</h2>
+
+<p><b>C09 — the bridge claim</b> <span class="check">TO-OUR-KNOWLEDGE</span>: to the best of our knowledge, the peer-reviewed literature contains <b>no established physical mechanism</b> for the unresolved residue. The exotic-propulsion theorizing that does exist — warp drives, traversable wormholes, "metamaterial" lift, the AAWSAP "advanced propulsion" papers <button class="cite" data-c="dird">AAWSAP DIRDs</button> — is grey literature, outside peer review, and proposes nothing validated. This is a <i>literature-survey</i> claim — a documented absence — <b>not a conjecture</b>. It is the hinge: it closes Section 1's known-physics account, and it licenses Track B.</p>
+
+<div class="bridge">
+<span class="tag">BRIDGE · TRACK A → TRACK B</span><br>
+<b>The disjunction, stated neutrally.</b> Known physics, taken together with this ledger, forces a fork:
+<div class="eq">( the data is incorrect or incomplete )&nbsp;&nbsp; OR &nbsp;&nbsp;( new physics is involved )</div>
+with one honest asymmetry made explicit: <b>the data-incomplete branch is currently weighted higher.</b> GoFast resolved cleanly to parallax, and a ~3× range error swings the predicted signatures by ~243× (A04). Nothing established here shows the data is complete — so the fork is genuinely open, but it does not start even.
+</div>
+
+<div class="stance">
+<span class="tag">✍ AUTHOR'S PREFERENCE — a stance, not a verified or derived claim</span><br>
+Speaking now in my own voice, not the ledger's: <b>I choose to lean into the new-physics branch — Track B — as a declared exploratory preference.</b> It is the direction I find worth developing, and I am betting my attention on it. This is a stance, not a result. It does <b>not</b> assert that data-completeness has been established (it has not); it sets <b>no</b> ledger label and earns no claim the evidence hasn't. My prior conviction informs which questions I pursue — it does not get a vote on any claim's verification status. Read what follows in Track B as deliberately speculative, and hold it to the same honest labels regardless.
+</div>
+
+<p>No Track B conjecture content appears in this build — only the bridge that licenses it. The "what-if-it-is-real" mechanism classes come later, and only once the <span class="mono">EXPLORATORY-CONJECTURE</span> label is written into this repository's doctrine, so that every such item can carry a status that is true.</p>
+
 <h2><span class="num">02</span>What this is — the method, honestly</h2>
 
 <p>The object of study is partly the <b>process</b>: an AI agent assembling a contested-topic argument in public, with verification wired in. Section 1's four numbers (A01–A04) are recomputed by a script on every push; you can <a href="https://github.com/m4gr4th34/dossier-UAP-propulsion/actions">run the checks</a>. The three primary sources behind the load-bearing claims were read from their actual text before being pinned; one (Loeb–Kirkpatrick) is a preprint and is flagged as such, and one official paper (the AARO 2025 declassification document) is flagged <span class="mono">VERIFIED-PENDING-PDF</span> because it has not yet been read clean. The <a href="ledger.html">ledger</a> shows every status.</p>
@@ -192,7 +218,8 @@ const CITES = {
   lk: {who:"Loeb & Kirkpatrick (2023, draft)", what:"Derives, from standard physics, that a highly maneuverable object moving through air must produce an optical fireball, ionization shell+tail (radio signature), sonic boom and thermal signature, with fireball luminosity scaling as distance^5. Their conclusion: the absence of such signatures most plausibly means the range — and hence the inferred velocity — is wrong.", src:"'Physical Constraints on UAP', draft 2023-03-07 (text layer read clean; final venue unconfirmed)."},
   gofast: {who:"AARO GoFast Case Resolution (2025)", what:"Finds the GoFast object's apparent high speed is motion parallax: assessed altitude ~13,000 ft and assessed speed 5–92 mph, with 'no anomalous performance characteristics.' Only a compressed copy of the video survived and its metadata was lost.", src:"AARO 'Go Fast' Case Resolution card, 2025-02-06."},
   nasa: {who:"NASA UAP Independent Study Team (2023)", what:"Finds no conclusive evidence of extraterrestrial origin and identifies data quality (calibration, metadata, baseline) as the core limitation; independently attributes the GoFast apparent motion to the sensor platform's velocity plus parallax.", src:"NASA UAP IST final report, 2023-09-14."},
-  aaro24: {who:"AARO FY2024 report", what:"Of 757 reports, resolved cases were prosaic (balloons, birds, drones); 21 merit further analysis on reported anomalous characteristics; most remain unresolved for lack of data. States no evidence of extraterrestrial beings, activity, or technology, and notes sensor artifacts (parallax, Starlink flaring) routinely look anomalous.", src:"AARO FY2024 Consolidated Annual Report, 2024-11-14."}
+  aaro24: {who:"AARO FY2024 report", what:"Of 757 reports, resolved cases were prosaic (balloons, birds, drones); 21 merit further analysis on reported anomalous characteristics; most remain unresolved for lack of data. States no evidence of extraterrestrial beings, activity, or technology, and notes sensor artifacts (parallax, Starlink flaring) routinely look anomalous.", src:"AARO FY2024 Consolidated Annual Report, 2024-11-14."},
+  dird: {who:"AAWSAP / DIRDs (Defense Intelligence Reference Documents, c. 2009-2010)", what:"A set of Pentagon-commissioned contractor white papers on speculative 'advanced propulsion' — warp drives, traversable wormholes, antigravity, metamaterials. They are grey literature, not peer-reviewed, and propose no experimentally validated mechanism. Cited here only to document the absence of an established mechanism, not as support for one.", src:"AAWSAP/AATIP DIRDs (e.g. Davis, 'Traversable Wormholes...'); non-peer-reviewed."}
 };
 function closeCard(btn){ const c = btn._card; if(c){ c.remove(); btn._card = null; btn.setAttribute('aria-expanded','false'); } }
 function toggle(btn, html, extraClass){

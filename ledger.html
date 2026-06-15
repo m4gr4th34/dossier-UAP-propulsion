@@ -44,6 +44,14 @@
   .note b{color:var(--ink)}
   footer{margin-top:34px;border-top:3px solid var(--ink);padding-top:16px;font-size:13px;color:var(--ink2)}
   .mono{font-family:var(--mono)}
+  tr.bridge-row td{background:linear-gradient(0deg,var(--violet-soft),var(--teal-soft))}
+  .bridgemark{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--violet)}
+  .bridge{background:linear-gradient(0deg,var(--violet-soft),var(--teal-soft));border:1.5px solid var(--violet);border-left:5px solid var(--violet);padding:14px 16px;margin:18px 0;font-size:14.5px}
+  .bridge .tag{font-family:var(--mono);font-size:11px;color:var(--violet);border:1px solid var(--violet);padding:2px 7px;display:inline-block;margin-bottom:8px}
+  .bridge .eq{font-family:var(--mono);font-size:13px;background:var(--card);border:1px solid var(--line);padding:9px 12px;margin:8px 0;text-align:center}
+  .stance{background:#fff;border:2px dashed var(--coral);padding:14px 16px;margin:18px 0;font-size:14.5px;font-style:italic}
+  .stance .tag{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--coral);border:1px solid var(--coral);padding:2px 7px;display:inline-block;margin-bottom:8px}
+  .stance b{font-style:normal}
 </style>
 </head>
 <body>
@@ -84,7 +92,7 @@
 
 <tr><td class="id">C08</td><td>Knuth et al. (2025, arXiv:2502.06794, "The New Science of Unidentified Aerospace-Undersea Phenomena") is a historical/field review compiling prior Mach 40–60 and &gt;100 MW claims; not a propulsion-mechanism paper.</td><td class="type">CITE</td><td class="src">arXiv:2502.06794</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
 
-<tr class="flagged"><td class="id">C09</td><td><span class="flagmark">⚑</span> Exotic-propulsion theory (warp/wormhole/metamaterial; AAWSAP DIRDs by Davis/Puthoff) is grey/speculative and absent from the peer-reviewed UAP-kinematics literature.</td><td class="type">NOVEL</td><td class="src">Phase 0 prior-art search, 2026-06-13</td><td><span class="badge b-novel">TO-OUR-KNOWLEDGE</span></td></tr>
+<tr class="bridge-row"><td class="id">C09</td><td><span class="bridgemark">↔ BRIDGE · TRACK A → TRACK B</span><br>To the best of our knowledge, the peer-reviewed literature contains <b>no established physical mechanism</b> for the unresolved residue; existing exotic-propulsion theorizing (warp / wormhole / metamaterial; AAWSAP "advanced propulsion" grey-literature) is speculative and outside peer review. A documented absence — a literature-survey claim, <b>not a conjecture</b>. It closes Section 1 (Track A) and opens Track B.</td><td class="type">NOVEL</td><td class="src">Phase 0 prior-art search, 2026-06-13</td><td><span class="badge b-novel">TO-OUR-KNOWLEDGE</span></td></tr>
 
 <tr><td class="id">A01</td><td>Taking Knuth's stated Tic Tac drop energy <span class="mono">4.3×10¹¹ J</span> at face value, it equals <b>~100 tons TNT</b> (computed 102.8). <span class="mono">[checkable · #A01]</span></td><td class="type">NUM</td><td class="src">verify_numbers.py #A01</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
 
@@ -99,6 +107,18 @@
 <tr class="flagged"><td class="id">O02</td><td><span class="flagmark">⚑</span> <b>Discriminating signature:</b> claimed ≫Mach-1 / high-g flight sustained <i>without</i> the LK-required signatures is the falsifiable discriminator; current evidence (GoFast parallax, AARO sensor-artifact findings, range sensitivity A04) favors velocity overestimation; only signature-absence under independently-verified range would point beyond known physics.</td><td class="type">DERIV</td><td class="src">open challenge — human review</td><td><span class="badge b-open">OPEN-UNVERIFIED</span></td></tr>
 </tbody>
 </table>
+
+<div class="bridge">
+<span class="tag">THE SEAM · C09 · disjunction (neutral)</span><br>
+Known physics, taken with this ledger, forces a fork:
+<div class="eq">( the data is incorrect or incomplete )&nbsp;&nbsp; OR &nbsp;&nbsp;( new physics is involved )</div>
+Honest asymmetry, stated plainly: <b>the data-incomplete branch is currently weighted higher</b> — GoFast resolved to parallax (C03), and a ~3× range error swings the predicted signatures ~243× (A04). Nothing here establishes that the data is complete; the fork is open but does not start even.
+</div>
+
+<div class="stance">
+<span class="tag">✍ AUTHOR'S PREFERENCE — stance, NOT a ledger claim</span><br>
+In the author's own voice: <b>I choose to lean into the new-physics branch (Track B) as a declared exploratory preference.</b> This is a stance, not a verified or derived claim — it carries no ledger ID, sets no label, and does <b>not</b> assert that data-completeness has been established. It records where I am choosing to spend exploratory effort, nothing more.
+</div>
 
 <div class="note">
 <b>Intentionally absent from this review-build:</b> Track B / "Gedanken" material and the <span class="mono">EXPLORATORY-CONJECTURE</span> label. That label is not yet written into this repository's doctrine (CLAUDE.md / PROJECT-INSTRUCTIONS.md), so no claim may carry it yet — by the rule that every label must be true.
