@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Self-Explaining Edition — UAP Propulsion (Open Dossier)</title>
-<meta name="description" content="YOUR ONE-LINE DESCRIPTION. The full paper, written to explain itself.">
+<title>What the Numbers Demand — UAP Propulsion, Section 1 (pre-release working draft)</title>
+<meta name="description" content="Section 1 (Track A): given the reported UAP kinematics, what known physics demands. An instrumented, AI-assisted reading; pre-release working draft.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;600&display=swap');
   :root{
@@ -29,16 +29,12 @@
   h2{font-family:var(--serif);font-weight:600;font-size:27px;margin:48px 0 6px;line-height:1.2}
   h2 .num{color:var(--coral);font-family:var(--mono);font-size:15px;font-weight:600;vertical-align:middle;margin-right:10px}
   p{margin:14px 0;max-width:68ch}
-
-  /* tappable terms */
   .term{background:linear-gradient(transparent 70%, var(--teal-soft) 70%);border:none;border-bottom:1.5px dashed var(--teal);
         padding:0 1px;font:inherit;color:inherit;cursor:pointer;text-align:left}
   .term:focus-visible{outline:2.5px solid var(--coral);outline-offset:2px}
-  /* citation chips */
   .cite{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--violet);background:var(--violet-soft);
         border:1px solid var(--violet);border-radius:10px;padding:1px 8px;cursor:pointer;vertical-align:2px}
   .cite:focus-visible{outline:2.5px solid var(--coral);outline-offset:2px}
-  /* the expansion card both produce */
   .popcard{display:block;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--teal);
            padding:12px 14px;margin:10px 0;font-size:15px;color:var(--ink2);max-width:68ch;animation:open .18s ease-out}
   .popcard.citecard{border-left-color:var(--violet)}
@@ -46,8 +42,6 @@
   .popcard .src{font-family:var(--mono);font-size:11.5px;color:var(--ink2);display:block;margin-top:6px}
   @keyframes open{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.popcard{animation:none}}
-
-  /* go-deeper layers */
   details.deeper{background:var(--card);border:1px solid var(--line);margin:16px 0}
   details.deeper summary{cursor:pointer;padding:12px 15px;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--violet);list-style:none}
   details.deeper summary::-webkit-details-marker{display:none}
@@ -55,16 +49,14 @@
   details.deeper[open] summary::before{content:'▾ '}
   details.deeper .body{padding:0 15px 14px;font-size:15px;color:var(--ink2)}
   details.deeper .eq{font-family:var(--mono);font-size:14px;background:var(--paper);padding:10px 12px;margin:8px 0;overflow-x:auto}
-
   .openclaim{background:#fdf6e9;border:1px solid var(--open);border-left:5px solid var(--open);padding:14px 16px;margin:18px 0;font-size:15.5px}
   .openclaim .tag{font-family:var(--mono);font-size:11px;color:var(--open);border:1px solid var(--open);padding:2px 7px;margin-right:8px}
   .punch{font-family:var(--serif);font-style:italic;font-size:20px;border-left:4px solid var(--coral);padding:6px 0 6px 16px;margin:26px 0;max-width:60ch}
   footer{margin-top:56px;padding:22px 0 60px;border-top:3px solid var(--ink);font-size:14px;color:var(--ink2)}
   .mono{font-family:var(--mono)}
-  .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 4px}
   .btn{font-family:var(--mono);font-size:13.5px;font-weight:600;text-decoration:none;padding:11px 16px;border:1.5px solid var(--ink);color:var(--ink);background:var(--card)}
   .btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
-  .cta{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 4px}
   .btn:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
 .provenance{display:flex;flex-wrap:wrap;gap:0;margin:18px 0 4px;border:1.5px solid var(--ink);background:var(--card);font-family:var(--mono);font-size:12px;overflow:hidden}
 .provenance .pv-item{display:flex;flex-direction:column;gap:2px;padding:9px 14px;border-right:1px solid var(--line);text-decoration:none;color:var(--ink);min-width:0}
@@ -83,105 +75,132 @@
 .publish-cta a.pc-btn{flex:0 0 auto;font-family:var(--mono);font-size:14px;font-weight:600;text-decoration:none;
   background:var(--teal);color:#fff;padding:12px 20px;white-space:nowrap}
 .publish-cta a.pc-btn:hover{background:#0a615f}
+  .draftbanner{background:#fdf6e9;border:1.5px solid var(--open);border-left:5px solid var(--open);padding:14px 16px;margin:18px 0;font-size:15px}
+  .draftbanner b{color:var(--open)}
+  .check{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--teal);background:var(--teal-soft);border:1px solid var(--teal);border-radius:10px;padding:1px 7px;white-space:nowrap}
+  .epi{background:#eef6f6;border:1px solid var(--teal);border-left:5px solid var(--teal);padding:14px 16px;margin:18px 0;font-size:15.5px}
+  .epi .tag{font-family:var(--mono);font-size:11px;color:var(--teal);border:1px solid var(--teal);padding:2px 7px;margin-right:8px}
+  .note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--violet);padding:12px 14px;margin:16px 0;font-size:14.5px;color:var(--ink2)}
+  .note b{color:var(--ink)}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <div class="eyebrow">An Open Dossier · <b>UAP propulsion</b> · self-explaining edition · v1.0</div>
-  <h1>UAP Propulsion</h1>
-  <div class="byline">Irfan Ali-Khan — Independent Researcher</div>
+  <div class="eyebrow">An Open Dossier · <b>UAP propulsion</b> · self-explaining edition · Section 1 · PRE-RELEASE WORKING DRAFT</div>
+  <h1>What the numbers demand</h1>
+  <div class="byline">Section 1 — within known physics: what the reported UAP kinematics would require · Irfan Ali-Khan, Independent Researcher</div>
   <div class="provenance" role="contentinfo" aria-label="Provenance and verification">
-    <span class="pv-item"><span class="pv-k">Reading</span><span class="pv-v" id="pv-state">live tip</span></span>
-    <a class="pv-item" id="pv-doi" href="#" target="_blank" rel="noopener"><span class="pv-k">Archived DOI</span><span class="pv-v" id="pv-doi-v">loading… ↗</span></a>
-    <a class="pv-item" href="verify.html" target="_blank" rel="noopener"><span class="pv-k">Bitcoin timestamp</span><span class="pv-v">verify proof ↗</span></a>
+    <span class="pv-item"><span class="pv-k">Reading</span><span class="pv-v" id="pv-state">pre-release working draft</span></span>
+    <a class="pv-item" href="ledger.html"><span class="pv-k">Claim ledger</span><span class="pv-v">every label, typed ↗</span></a>
+    <a class="pv-item" href="https://github.com/m4gr4th34/dossier-UAP-propulsion/actions" target="_blank" rel="noopener"><span class="pv-k">CI logs</span><span class="pv-v">run the checks ↗</span></a>
     <a class="pv-item" href="https://github.com/m4gr4th34/dossier-UAP-propulsion" target="_blank" rel="noopener"><span class="pv-k">Source</span><span class="pv-v">full history ↗</span></a>
   </div>
+
+  <div class="draftbanner">
+    <b>⚠ Pre-release working draft — not a released version.</b> This is <b>Section 1 only</b> (Track A: within known physics). No version number is asserted; no release, DOI, or timestamp. This is a single demonstrated instance of an AI agent working a problem in public with verification instrumented — offered as an artifact for review. It makes <b>no reliability claim</b> about AI-assisted analysis, and asserts <b>no novel physics</b>. The exotic-propulsion question is an explicitly <b>open</b> challenge, deferred below; speculative "what-if" mechanisms are <b>not</b> in this build.
+  </div>
+
+  <div class="epi">
+    <span class="tag">READ SKEPTICALLY</span><b>This is an informationally murky topic.</b> The raw data is sparse, often classified, and recorded by instruments not built to measure it. <b>Read every claim here skeptically — in both directions.</b> Treat sensational "it broke physics" claims with suspicion; and treat official resolutions (like the GoFast debunk used below) with the <i>same</i> suspicion — they too rest on incomplete, sometimes lossy data. The discipline of this dossier is that documented facts are stated plainly with sources, and the exotic conclusion is held open and labeled, never asserted.
+  </div>
+
+  <div class="note">
+    <b>Companion dossier:</b> Global energy is not conserved in an FRW universe (repo: <a href="https://github.com/m4gr4th34/dossier-energy-not-conserved">dossier-energy-not-conserved</a>) — DOI: <b>[TO BE LINKED ON RELEASE]</b>. Distinct research lineages live in separate repos; where they cross-pollinate they cross-cite by DOI, never merged.
+  </div>
+
   <div class="howto">
-    <b>How to read this:</b> the whole paper is on this one page, written to explain itself.
-    Tap any <button class="term" data-d="Like this! Underlined-dashed words expand in place with a plain-language explanation. Tap again to close. You never leave the page.">underlined term</button>
-    for a plain-language explanation. Tap any <button class="cite" data-c="demo">ref</button> to see what that source actually showed, in two sentences. <span class="mono">No rabbit holes. No prerequisites.</span>
+    <b>How to read this:</b> tap any <button class="term" data-d="Underlined-dashed words expand in place with a plain-language explanation. Tap again to close — you never leave the page.">underlined term</button> for a plain explanation, and any <button class="cite" data-c="demo">ref</button> to see what a source actually showed. A <span class="check">checkable · #A0n</span> tag marks a claim the verification script recomputes — open the <a href="ledger.html">ledger</a> or the <a href="https://github.com/m4gr4th34/dossier-UAP-propulsion/blob/main/verification/verify_numbers.py">script</a> and run it yourself.
   </div>
   <div class="cta">
-    <a class="btn" href="index.html">Explore the result</a>
-    <a class="btn primary" href="paper.html">Self-explaining edition</a>
-    <a class="btn" href="paper/manuscript.pdf">Read the PDF</a>
-    <a class="btn" href="dossier.html">Audit trail</a>
+    <a class="btn primary" href="paper.html">Self-explaining edition (Section 1)</a>
+    <a class="btn" href="ledger.html">Claim ledger</a>
     <a class="btn" href="https://github.com/m4gr4th34/dossier-UAP-propulsion">Source &amp; issues</a>
   </div>
 </header>
 
-<!-- ============================================================
-     AUTHOR INSTRUCTIONS (delete this comment when done):
-     1. Write your paper as numbered narrative sections below.
-        Plain language first; math goes in details.deeper blocks.
-     2. Wrap technical terms in:
-        <button class="term" data-d="3-5 sentence plain explanation">term</button>
-     3. Cite with chips:
-        <button class="cite" data-c="KEY">Venue 'YY</button>
-        ...and add KEY to the CITES database in the script below,
-        with who/what/src — what the source showed, in 2 sentences.
-     4. Any OPEN-UNVERIFIED claim gets an .openclaim box, in the text,
-        where the claim is made. Honest labels, always.
-     ============================================================ -->
+<h2><span class="num">01</span>Within known physics: what the reported numbers demand</h2>
 
-<h2><span class="num">01</span>YOUR FIRST SECTION TITLE</h2>
+<p>Start with the strongest published version of the claim. Analyzing the 2004 USS Nimitz "Tic&nbsp;Tac" encounter, a peer-reviewed paper estimates, for the radar-tracked descent, a
+<button class="term" data-d="Acceleration measured in multiples of g, Earth's surface gravity (9.8 m/s²). Fighter pilots black out around 9 g; a rifle bullet in the barrel sees thousands of g. The Nimitz radar estimate is in that latter, structure-destroying range.">lower-bound acceleration</button>
+of about <b>5,370 g</b> and a peak speed near <b>46,000 mph</b>, dropping from 28,000 ft to sea level in 0.78 s <button class="cite" data-c="knuth2019">Knuth+ '19</button>. At an assumed mass of a tonne, the kinetic energy is about 4.3×10¹¹ J — roughly <b>100 tons of TNT</b> <span class="check">checkable · #A01</span>. The authors are careful: these are <i>lower bounds</i> with liberal uncertainty, and they state outright that one cannot prove any craft is extraterrestrial.</p>
 
-<p>Your opening narrative. Here is a
-<button class="term" data-d="Replace this with a 3-5 sentence plain-language explanation of the term, written for a smart non-specialist. What is it, why does it matter here, what is the one surprising thing about it?">tappable term</button>
-and here is a claim with a source
-<button class="cite" data-c="ref1">Journal 'YY</button>.
-Write the whole argument this way — every concept explained where it first appears.</p>
+<p>Take those numbers at face value and ask only what <b>known physics</b> then requires — that is this section's entire job. The answer is sharp. Anything moving through air at those speeds must announce itself.</p>
 
-<details class="deeper"><summary>Go deeper: NAME THE TECHNICAL LAYER</summary>
-<div class="body">Equations and formal detail live here, collapsed by default.
-<div class="eq">your_equation = goes / here</div>
-Cite within deeper blocks the same way <button class="cite" data-c="ref2">Journal 'YY</button>.</div>
+<p>An object at ~46,000 mph is at roughly
+<button class="term" data-d="Mach number is speed divided by the local speed of sound (~343 m/s near sea level). Mach 1 is a sonic boom; Mach 5+ is 'hypersonic', where air piles up, heats, and glows. Mach 60 is far beyond any aircraft or re-entry capsule.">Mach 60</button>
+<span class="check">checkable · #A03</span>. At that speed, friction with the air is not optional: a published physical-constraints analysis shows it <b>must</b> generate a bright optical
+<button class="term" data-d="A fireball is the glowing shock-heated air around a fast object — the same thing that makes meteors visible. Its brightness grows with the cube of speed, so at Mach 60 it is enormous, not subtle.">fireball</button>,
+an ionization shell, a radio-frequency signature, a sonic boom, and a thermal bloom <button class="cite" data-c="lk">Loeb–Kirkpatrick '23</button>. Plugging the reported speed into their luminosity formula gives an optical fireball of order <b>5 terawatts</b> <span class="check">checkable · #A02</span> — brighter than a small city's worth of stadium lights, in the sky, for everyone and every sensor to see. Nothing like that was reported.</p>
+
+<details class="deeper"><summary>Go deeper: the Loeb–Kirkpatrick signature formula</summary>
+<div class="body">For frontal area A, air density ρ, speed v, the dissipated mechanical power and the radiated optical luminosity scale as
+<div class="eq">P ≈ ½ A ρ v³ ≈ 1.5 TW · (A/10 m²)(ρ/0.3)(v/10 km s⁻¹)³
+L_opt ≈ 150 GW · (A/10 m²)(ρ/0.3)(v/10 km s⁻¹)³</div>
+At v≈20.6 km/s (46,000 mph), A≈10 m², sea-level ρ, this is ~5.3 TW of optical output <span class="check">checkable · #A02</span>. Crucially L_opt scales as the <b>cube of speed</b> — and speed inferred from a single sensor scales with the assumed range. <button class="cite" data-c="lk">Loeb–Kirkpatrick '23</button></div>
 </details>
 
-<h2><span class="num">02</span>YOUR SECOND SECTION TITLE</h2>
+<p class="punch">Known physics does not whisper at Mach 60. It screams. So either the scream happened and went unrecorded — or the speed is wrong.</p>
 
-<p>Continue the narrative. If a claim is published unverified by design, label it honestly where it appears:</p>
+<p>And the speed is exactly the fragile number. Speed and acceleration inferred from a single targeting pod depend on the <button class="term" data-d="Range is the distance to the object. A camera measures angles, not distance; to turn an angular rate into a speed you must assume a range. Get the range wrong and the speed is wrong by the same factor — and the predicted fireball, which goes as speed cubed and area (distance squared), is wrong by distance to the fifth power.">assumed range</button>, and the fireball brightness goes as <b>distance to the fifth power</b>. So a mere 3× error in range swings the inferred signature by <b>243×</b> <span class="check">checkable · #A04</span>. This is not hypothetical.</p>
+
+<p>The <b>GoFast</b> video is the worked example. For years it looked like an object screaming low over the ocean. AARO's 2025 resolution — and NASA's independent panel before it — found the apparent speed was
+<button class="term" data-d="Motion parallax: a nearby-looking object filmed from a fast-moving plane appears to race across the background, even if it is barely moving. The same effect makes roadside trees blur past while distant mountains drift slowly.">motion parallax</button>:
+the object sat at ~13,000 ft, and its assessed speed was a mundane <b>5–92 mph</b> — a balloon-or-drone-class object, no anomalous performance <button class="cite" data-c="gofast">AARO GoFast '25</button> <button class="cite" data-c="nasa">NASA '23</button>. A geometry error had manufactured the anomaly.</p>
+
+<p>That is the boundary Track A can establish, and no more: <b>within known physics, the reported high-end kinematics are either measurement artifacts (the GoFast pattern) or they would have produced signatures that were not observed.</b> Known physics alone cannot yet tell us which of those holds for the genuinely unresolved cases — and the official "no evidence of extraterrestrial technology" findings <button class="cite" data-c="aaro24">AARO FY24</button> are consistent with both readings, since most cases simply lack the data to decide.</p>
 
 <div class="openclaim">
-<span class="tag">OPEN-UNVERIFIED</span><b>Honest label:</b> DESCRIBE THE UNVERIFIED CLAIM. State that it is claim <span class="mono">CNN</span> in the public ledger and an open challenge: <b>the first person to confirm or refute it gets named credit in the next version.</b>
+<span class="tag">OPEN-UNVERIFIED</span><b>The open question (deferred — not argued in this section).</b> Whether any public kinematic data establishes non-human/exotic propulsion is claim <span class="mono">O01</span> in the <a href="ledger.html">ledger</a>, labeled OPEN-UNVERIFIED. The proposed <i>discriminating signature</i> — sustained Mach-≫1 flight <i>without</i> the required fireball/ionization/boom/thermal signatures, under an <b>independently verified</b> range — is claim <span class="mono">O02</span>. Both are open challenges: the first rigorous treatment that closes either gets named credit. This section deliberately stops at the boundary of known physics; speculative mechanisms are not part of this build.</p>
 </div>
 
-<p class="punch">End with the line your readers should carry away.</p>
+<p class="punch">The honest result of Section 1 is a fork, not a verdict: artifact, or unrecorded signature. Resolving it needs better range data, not bolder adjectives.</p>
+
+<h2><span class="num">02</span>What this is — the method, honestly</h2>
+
+<p>The object of study is partly the <b>process</b>: an AI agent assembling a contested-topic argument in public, with verification wired in. Section 1's four numbers (A01–A04) are recomputed by a script on every push; you can <a href="https://github.com/m4gr4th34/dossier-UAP-propulsion/actions">run the checks</a>. The three primary sources behind the load-bearing claims were read from their actual text before being pinned; one (Loeb–Kirkpatrick) is a preprint and is flagged as such, and one official paper (the AARO 2025 declassification document) is flagged <span class="mono">VERIFIED-PENDING-PDF</span> because it has not yet been read clean. The <a href="ledger.html">ledger</a> shows every status.</p>
+
+<div class="openclaim">
+<span class="tag">READ WITH SUSPICION</span><b>No reliability claim is made.</b> This is one instance, on a topic where the "right answer" is contested and the agent has seen much of the prior commentary. A clean check run is weak evidence at best — treat it as an invitation to attack the inputs (the assumed area, density, range) and the framing, not as a result about whether AI-assisted analysis is reliable. That the method <i>surfaces</i> errors fast is the experiment's hypothesis, not its conclusion.</div>
+
+<div class="note">
+<b>Out of scope in this build (not claimed):</b> the "what-if-it-is-real" mechanism classes (Track B) and any <span class="mono">EXPLORATORY-CONJECTURE</span> material — that label is not yet written into this repository's doctrine, so nothing may carry it. Also out of scope: the cosmological constant, quasilocal energy, and the unimodular / brane-bulk energy-leak literature (see the companion dossier).
+</div>
+
+<p class="punch">A single honest instance at the edge of the data: not proof of anything exotic, and not proof the method works — a checkable artifact for deciding both.</p>
 
 <div class="publish-cta">
   <div class="pc-text">
     <p class="pc-h">Want to publish like this?</p>
-    <p class="pc-sub">You just read a paper that explains itself. You can publish one too — Open Dossier is a free template, and an AI agent does the drafting, typesetting, citations, and verification. Idea to live publication in an afternoon.</p>
+    <p class="pc-sub">You just read a draft that pins its sources and checks its own numbers in public. Open Dossier is a free template; an AI agent does the drafting, citations, and verification.</p>
   </div>
   <a class="pc-btn" href="https://github.com/m4gr4th34/open-dossier-template/blob/main/GETTING-STARTED.md">Publish your own →</a>
 </div>
 
 <footer>
-  <b>About this edition:</b> this page is the complete paper in self-explaining form. The <a href="paper/manuscript.pdf">formal PDF</a> exists for tradition and archives; the <a href="index.html">interactive edition</a> carries the verification console; the <a href="dossier.html">audit trail</a> carries the receipts.
-  <br><br><span class="mono">An Open Dossier · CC BY 4.0 · AI-assistance: DESCRIBE YOUR USE and state your actual review basis · every verification label is true</span>
+  <b>About this edition:</b> Section 1 (Track A) of a <b>pre-release working draft</b>. The interactive console, the audit trail, and the formal PDF are not yet built; no release, no DOI, no timestamp. The object of sign-off is the <a href="ledger.html">claim ledger</a>.
+  <br><br><span class="mono">An Open Dossier · CC BY 4.0 · AI-assistance: sources read and pinned, numbers checked under CI, every label in the ledger true; human review pending. No reliability claim; no novel physics; established facts asserted, the exotic conclusion held open.</span>
 </footer>
 
 </div>
 
 <script>
-// citation database — add an entry per chip:
-// KEY: {who:"Author(s) (Year)", what:"What they showed, 2 sentences, plain language.", src:"Journal Vol, Page"}
 const CITES = {
-  demo: {who:"This is a citation chip", what:"Tap any chip like this one and you get the source plus a two-sentence plain-language summary of what it actually showed — instead of a bare [7] sending you down a rabbit hole.", src:"You never leave the page."},
-  ref1: {who:"REPLACE — Author et al. (Year)", what:"REPLACE — what this source demonstrated, in plain language, and why it matters to this paper.", src:"Journal Vol, Page (Year)"},
-  ref2: {who:"REPLACE — Author et al. (Year)", what:"REPLACE.", src:"Journal Vol, Page (Year)"}
+  demo: {who:"This is a citation chip", what:"Tap any chip like this and you get the source plus a two-sentence plain-language summary of what it actually showed — no rabbit hole.", src:"You never leave the page."},
+  knuth2019: {who:"Knuth, Powell & Reali (2019)", what:"Estimates flight characteristics of well-documented UAP, including the Nimitz Tic Tac: lower-bound accelerations from 75.9 g (ATFLIR video) to ~5370 g (radar), with explicit caveats that these are lower bounds and that extraterrestrial origin cannot be proven. The numbers depend on assumed range and eyewitness inputs.", src:"Entropy 21(10):939 (2019), DOI 10.3390/e21100939."},
+  lk: {who:"Loeb & Kirkpatrick (2023, draft)", what:"Derives, from standard physics, that a highly maneuverable object moving through air must produce an optical fireball, ionization shell+tail (radio signature), sonic boom and thermal signature, with fireball luminosity scaling as distance^5. Their conclusion: the absence of such signatures most plausibly means the range — and hence the inferred velocity — is wrong.", src:"'Physical Constraints on UAP', draft 2023-03-07 (text layer read clean; final venue unconfirmed)."},
+  gofast: {who:"AARO GoFast Case Resolution (2025)", what:"Finds the GoFast object's apparent high speed is motion parallax: assessed altitude ~13,000 ft and assessed speed 5–92 mph, with 'no anomalous performance characteristics.' Only a compressed copy of the video survived and its metadata was lost.", src:"AARO 'Go Fast' Case Resolution card, 2025-02-06."},
+  nasa: {who:"NASA UAP Independent Study Team (2023)", what:"Finds no conclusive evidence of extraterrestrial origin and identifies data quality (calibration, metadata, baseline) as the core limitation; independently attributes the GoFast apparent motion to the sensor platform's velocity plus parallax.", src:"NASA UAP IST final report, 2023-09-14."},
+  aaro24: {who:"AARO FY2024 report", what:"Of 757 reports, resolved cases were prosaic (balloons, birds, drones); 21 merit further analysis on reported anomalous characteristics; most remain unresolved for lack of data. States no evidence of extraterrestrial beings, activity, or technology, and notes sensor artifacts (parallax, Starlink flaring) routinely look anomalous.", src:"AARO FY2024 Consolidated Annual Report, 2024-11-14."}
 };
-// one shared toggle behavior for terms and citations
 function closeCard(btn){ const c = btn._card; if(c){ c.remove(); btn._card = null; btn.setAttribute('aria-expanded','false'); } }
 function toggle(btn, html, extraClass){
   if(btn._card){ closeCard(btn); return; }
   const card = document.createElement('span');
   card.className = 'popcard' + (extraClass ? ' ' + extraClass : '');
   card.innerHTML = html;
-  // insert after the end of the current paragraph-level parent for clean layout
-  const block = btn.closest('p, .howto, .body, .openclaim') || btn.parentNode;
+  const block = btn.closest('p, .howto, .body, .openclaim, .epi, .note, li') || btn.parentNode;
   block.insertAdjacentElement('afterend', card);
   btn._card = card; btn.setAttribute('aria-expanded','true');
 }
@@ -192,8 +211,7 @@ document.querySelectorAll('.term').forEach(btn=>{
 document.querySelectorAll('.cite').forEach(btn=>{
   btn.setAttribute('aria-expanded','false');
   btn.addEventListener('click', ()=>{
-    const c = CITES[btn.dataset.c];
-    if(!c) return;
+    const c = CITES[btn.dataset.c]; if(!c) return;
     toggle(btn, '<b>'+c.who+':</b> '+c.what+'<span class="src">'+c.src+'</span>', 'citecard');
   });
 });
@@ -201,15 +219,8 @@ document.querySelectorAll('.cite').forEach(btn=>{
 <script>
 fetch('provenance.json').then(r=>r.json()).then(p=>{
   const d=document.getElementById('pv-doi'), v=document.getElementById('pv-doi-v');
-  if(!p.version_doi || p.version_doi.indexOf('TODO')===0){
-    v.textContent='DOI after first release';
-    d.href='https://github.com/m4gr4th34/dossier-UAP-propulsion';
-  } else {
-    d.href='https://doi.org/'+p.version_doi; v.textContent=p.version_doi+' ↗';
-  }
-  document.getElementById('pv-state').textContent='release '+p.release_tag+' (+ live edits)';
-}).catch(()=>{document.getElementById('pv-doi-v').textContent='see repository ↗';
-  document.getElementById('pv-doi').href='https://github.com/m4gr4th34/dossier-UAP-propulsion';});
+  document.getElementById('pv-state').textContent='pre-release working draft';
+}).catch(()=>{});
 </script>
 </body>
 </html>
