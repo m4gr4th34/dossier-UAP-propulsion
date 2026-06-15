@@ -4,18 +4,28 @@
 *Don't trust this paper — run it.*
 Irfan Ali-Khan · Independent Researcher · 2026
 
-### ▶ [Read the living paper](https://m4gr4th34.github.io/dossier-UAP-propulsion/) · [Self-explaining edition](https://m4gr4th34.github.io/dossier-UAP-propulsion/paper.html) · [Run the checks](https://m4gr4th34.github.io/dossier-UAP-propulsion/#verify) · [Audit trail](https://m4gr4th34.github.io/dossier-UAP-propulsion/dossier.html)
+### 📖 Live preview (work in progress)
+> **This dossier is an active pre-release draft — not yet released, no version asserted.** Only **Section 1** (Track A — within known physics) and the **claim ledger** are built; the interactive console, audit trail, and PDF are not. Shared early so the ideas can be read and discussed as they develop.
+
+▶ **[Read the self-explaining edition — Section 1](https://m4gr4th34.github.io/dossier-UAP-propulsion/paper.html)** · [Claim ledger (the object of sign-off)](https://m4gr4th34.github.io/dossier-UAP-propulsion/ledger.html)
+
 ### ✦ [Publish your own like this →](https://github.com/m4gr4th34/open-dossier-template/blob/main/GETTING-STARTED.md)  — free template, ~20 minutes, no LaTeX or web skills needed
 
 [![claims: verified](https://github.com/m4gr4th34/dossier-UAP-propulsion/actions/workflows/verify.yml/badge.svg)](https://github.com/m4gr4th34/dossier-UAP-propulsion/actions/workflows/verify.yml)
 <!-- After Zenodo release, paste your DOI badge here:
 [![DOI](https://zenodo.org/badge/REPOID.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
 
-> **Status: scaffold.** This repository was just spawned from the
-> [Open Dossier template](https://github.com/m4gr4th34/open-dossier-template).
-> The research — thesis, claims, verification checks, citations, and the four
-> reading surfaces — is the next phase. Until then, the title above is a working
-> placeholder and the content sections below are TODO.
+> **Status: PRE-RELEASE WORKING DRAFT — review build, not released.** No version
+> number is asserted; no release, DOI, or timestamp. Built so far: **Section 1**
+> (Track A — within known physics) in [`paper.html`](paper.html), four executable
+> checks (A01–A04) in [`verification/verify_numbers.py`](verification/verify_numbers.py),
+> and the readable [`ledger.html`](ledger.html). Not yet built: the interactive
+> console, the audit trail, and the formal PDF. Track B / exploratory-conjecture
+> material is intentionally absent until that label is written into the doctrine.
+
+## Companion dossier
+
+**Companion dossier: Global energy is not conserved in an FRW universe** (repo: [`dossier-energy-not-conserved`](https://github.com/m4gr4th34/dossier-energy-not-conserved)) — DOI: **[TO BE LINKED ON RELEASE]**. Distinct research lineages live in separate repos; where they cross-pollinate they cross-cite by DOI, never merged.
 
 ## What this is
 
