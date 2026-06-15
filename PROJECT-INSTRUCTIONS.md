@@ -29,6 +29,13 @@ verification script, and its claim ledger all live here.
   not re-derivation** — stated publicly in the acknowledgments. Surface
   anything that looks inconsistent rather than smoothing it over.
 - One falsely-labeled claim kills the format's credibility. Guard it.
+- **EXPLORATORY-CONJECTURE** — deliberately speculative material that asserts no
+  truth value. Distinct from OPEN-UNVERIFIED (a checkable claim awaiting a check).
+  Admissible only if it (1) states its premise (the "if"), (2) predicts a distinct,
+  measurable signature, and (3) names its cost — the conservation law it strains,
+  the energy density it implies, or what it cannot explain. A conjecture that
+  predicts nothing and costs nothing is cut. Such material lives only in a
+  clearly-labeled exploratory section, never in the abstract or main results.
 
 ## Geography (three layers)
 1. **GitHub = the truth.** The synced repo is the canonical state.
