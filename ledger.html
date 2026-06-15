@@ -32,6 +32,8 @@
   .b-flag{color:var(--open);border-color:var(--open);background:#fdf6e9}
   .b-open{color:var(--coral);border-color:var(--coral);background:#fdeae5}
   .b-novel{color:var(--violet);border-color:var(--violet);background:var(--violet-soft)}
+  .b-exp{color:#fff;border-color:var(--coral);background:var(--coral)}
+  .pin{font-family:var(--mono);font-size:10.5px;font-weight:700;color:#fff;background:var(--coral);border-radius:10px;padding:1px 7px;margin-left:6px;white-space:nowrap}
   table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;background:var(--card);border:1.5px solid var(--ink)}
   th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
   th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);background:var(--teal-soft)}
@@ -62,7 +64,7 @@
   <div class="byline">Irfan Ali-Khan · every claim, typed, source-pinned, with an honest status</div>
 
   <div class="draftbanner">
-    <b>⚠ Pre-release working draft — not released, no version asserted.</b> This page renders <span class="mono">claim_ledger.csv</span> for human review. The rule is not "everything is verified" — the rule is <b>every label is true</b>. Flagged rows (amber) are not yet fully pinned and are <b>not</b> presented as confirmed. Track B / exploratory-conjecture material is intentionally <b>absent</b> from this build.
+    <b>⚠ Pre-release working draft — not released, no version asserted.</b> This page renders <span class="mono">claim_ledger.csv</span> for human review. The rule is not "everything is verified" — the rule is <b>every label is true</b>. Flagged rows (amber) are not yet fully pinned and are <b>not</b> presented as confirmed. Track B now carries one <b>pinned</b> EXPLORATORY-CONJECTURE (B1) — it asserts <b>no truth value</b> and is walled off from the verified rows.
   </div>
 
   <div class="legend">
@@ -70,6 +72,7 @@
     <span class="badge b-flag">VERIFIED-PENDING-PDF / VERIFIED-PREPRINT — flagged</span>
     <span class="badge b-novel">TO-OUR-KNOWLEDGE — novelty, search-based</span>
     <span class="badge b-open">OPEN-UNVERIFIED — open challenge</span>
+    <span class="badge b-exp">EXPLORATORY-CONJECTURE — pinned, asserts no truth value</span>
   </div>
 </header>
 
@@ -105,6 +108,8 @@
 <tr class="flagged"><td class="id">O01</td><td><span class="flagmark">⚑</span> Public kinematic data <b>do not establish</b> non-human/exotic propulsion for any UAP.</td><td class="type">DERIV</td><td class="src">open challenge — human review</td><td><span class="badge b-open">OPEN-UNVERIFIED</span></td></tr>
 
 <tr class="flagged"><td class="id">O02</td><td><span class="flagmark">⚑</span> <b>Discriminating signature:</b> claimed ≫Mach-1 / high-g flight sustained <i>without</i> the LK-required signatures is the falsifiable discriminator; current evidence (GoFast parallax, AARO sensor-artifact findings, range sensitivity A04) favors velocity overestimation; only signature-absence under independently-verified range would point beyond known physics.</td><td class="type">DERIV</td><td class="src">open challenge — human review</td><td><span class="badge b-open">OPEN-UNVERIFIED</span></td></tr>
+
+<tr class="bridge-row"><td class="id">B1</td><td><span class="bridgemark">TRACK B · SECTION 2 PART 1 · 📌 PINNED</span><br><b>Conjecture 1 — conservation as a bubble-local symmetry.</b> IF energy conservation is the shadow of our universe's (the bubble's) time-translation symmetry and the embedding meta-structure has no such symmetry, THEN total energy is undefined across the bubble boundary and energy need not be conserved there. <b>Supporting crack:</b> GR has no global energy conservation without a timelike Killing vector — our expanding universe has none (companion dossier). <b>Cost:</b> strains global energy conservation; requires an embedding meta-structure + a small-but-finite boundary coupling Γ (always-open floods, exactly-zero seals). <b>Open hole:</b> what sets Γ — and thus the measurable signature — is deferred to Part 2. Premise supposed, not asserted; gap is a contingent fact about reality, not verification work (so NOT OPEN-CAVEATED).</td><td class="type">DERIV</td><td class="src">paper.html §2 Part 1 · builds on companion dossier-energy-not-conserved (no-Killing-vector result), DOI [TO BE LINKED ON RELEASE]</td><td><span class="badge b-exp">EXPLORATORY-CONJECTURE</span> <span class="pin">📌 PINNED</span></td></tr>
 </tbody>
 </table>
 
@@ -121,7 +126,7 @@ In the author's own voice: <b>I choose to lean into the new-physics branch (Trac
 </div>
 
 <div class="note">
-<b>Intentionally absent from this review-build:</b> Track B / "Gedanken" material and the <span class="mono">EXPLORATORY-CONJECTURE</span> label. That label is not yet written into this repository's doctrine (CLAUDE.md / PROJECT-INSTRUCTIONS.md), so no claim may carry it yet — by the rule that every label must be true.
+<b>Track B status:</b> now open with one pinned entry (B1, Section 2 Part 1). The <span class="mono">EXPLORATORY-CONJECTURE</span> label is defined in this repository's doctrine (CLAUDE.md / PROJECT-INSTRUCTIONS.md / research_pipeline.md), so the row can carry it truthfully. Still deferred: the remaining mechanism classes and the specification of Γ that Conjecture 1 needs (Part 2).
 </div>
 
 <footer>
