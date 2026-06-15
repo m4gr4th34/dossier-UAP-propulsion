@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim Ledger — UAP Propulsion (pre-release working draft)</title>
+<meta name="description" content="Every claim, typed, source-pinned, with an honest verification status. The object of sign-off.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,800;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap');
+  :root{
+    --ink:#101d26;--ink2:#42525c;--paper:#f6f8f9;--card:#ffffff;
+    --teal:#0e7c7b;--teal-soft:#e3f0f0;--coral:#e4572e;--violet:#6b4e9b;--violet-soft:#efe9f6;
+    --pass:#1e8e5a;--open:#b07d1f;--line:#d8e0e4;
+    --serif:'Spectral',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+  a{color:var(--teal)}
+  header{padding:48px 0 8px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+  .eyebrow b{color:var(--coral)}
+  h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.14;margin:.35em 0 .15em}
+  .byline{font-family:var(--serif);font-style:italic;color:var(--ink2);margin-bottom:14px}
+  .draftbanner{background:#fdf6e9;border:1.5px solid var(--open);border-left:5px solid var(--open);padding:13px 16px;margin:16px 0;font-size:14.5px}
+  .draftbanner b{color:var(--open)}
+  p{max-width:78ch}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+  .badge{font-family:var(--mono);font-size:11px;font-weight:600;padding:2px 9px;border-radius:11px;border:1px solid;white-space:nowrap}
+  .b-verified{color:var(--pass);border-color:var(--pass);background:#e8f5ee}
+  .b-flag{color:var(--open);border-color:var(--open);background:#fdf6e9}
+  .b-open{color:var(--coral);border-color:var(--coral);background:#fdeae5}
+  .b-novel{color:var(--violet);border-color:var(--violet);background:var(--violet-soft)}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;background:var(--card);border:1.5px solid var(--ink)}
+  th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);background:var(--teal-soft)}
+  td.id{font-family:var(--mono);font-weight:600;white-space:nowrap}
+  td.type{font-family:var(--mono);font-size:12px;color:var(--violet);white-space:nowrap}
+  td.src{font-family:var(--mono);font-size:11.5px;color:var(--ink2)}
+  tr.flagged{background:#fffdf6}
+  .flagmark{color:var(--open);font-weight:700}
+  .note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--violet);padding:12px 14px;margin:18px 0;font-size:14px;color:var(--ink2)}
+  .note b{color:var(--ink)}
+  footer{margin-top:34px;border-top:3px solid var(--ink);padding-top:16px;font-size:13px;color:var(--ink2)}
+  .mono{font-family:var(--mono)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">An Open Dossier · <b>UAP propulsion</b> · claim ledger · PRE-RELEASE WORKING DRAFT</div>
+  <h1>Claim ledger — the object of sign-off</h1>
+  <div class="byline">Irfan Ali-Khan · every claim, typed, source-pinned, with an honest status</div>
+
+  <div class="draftbanner">
+    <b>⚠ Pre-release working draft — not released, no version asserted.</b> This page renders <span class="mono">claim_ledger.csv</span> for human review. The rule is not "everything is verified" — the rule is <b>every label is true</b>. Flagged rows (amber) are not yet fully pinned and are <b>not</b> presented as confirmed. Track B / exploratory-conjecture material is intentionally <b>absent</b> from this build.
+  </div>
+
+  <div class="legend">
+    <span class="badge b-verified">VERIFIED — primary source pinned clean</span>
+    <span class="badge b-flag">VERIFIED-PENDING-PDF / VERIFIED-PREPRINT — flagged</span>
+    <span class="badge b-novel">TO-OUR-KNOWLEDGE — novelty, search-based</span>
+    <span class="badge b-open">OPEN-UNVERIFIED — open challenge</span>
+  </div>
+</header>
+
+<table>
+<thead><tr><th>ID</th><th>Claim</th><th>Type</th><th>Source pin</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="id">C01</td><td>Knuth, Powell &amp; Reali (2019) report lower-bound accelerations from <b>75.9&nbsp;±&nbsp;0.2&nbsp;g</b> (Nimitz ATFLIR) to <b>~5370&nbsp;(−820/+1430)&nbsp;g</b> (Nimitz radar), explicitly self-labeled lower bounds; authors state ET origin cannot be proven.</td><td class="type">CITE</td><td class="src">Entropy 21(10):939, DOI 10.3390/e21100939 (full text)</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">C02</td><td>DoD authenticated &amp; officially released FLIR1/Gimbal/GoFast (2020-04-27); authenticity established, interpretation not.</td><td class="type">CITE</td><td class="src">DoD/Navy statement, 2020-04-27</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">C03</td><td><b>GoFast resolved as mundane:</b> AARO (2025-02-06) — apparent high speed is motion parallax; object altitude <b>13,000&nbsp;ft</b>; assessed speed <b>5–92&nbsp;mph</b>; "did not demonstrate anomalous performance characteristics"; only a compressed file survived (metadata gone).</td><td class="type">CITE</td><td class="src">AARO GoFast Case Resolution card, 2025-02-06 (Wayback primary)</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">C04</td><td>NASA UAP IST (2023-09-14): no conclusive evidence of ET origin; principal limit is data quality (calibration, multiple measurements, metadata, baseline); independently attributes GoFast apparent motion to sensor-platform velocity + parallax.</td><td class="type">CITE</td><td class="src">NASA UAP IST final report (full text)</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">C05</td><td>AARO FY2024: 757 reports (485 in-period); 118 resolved all-prosaic; <b>21 merit further analysis</b> per reported anomalous characteristics; majority unresolved for lack of data; "<b>no evidence of extraterrestrial beings, activity, or technology</b>"; sensor artifacts (parallax, Starlink flaring) produce apparent beyond-SOTA performance.</td><td class="type">CITE</td><td class="src">AARO FY2024 report, 2024-11-14 (Wayback primary)</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr class="flagged"><td class="id">C06</td><td><span class="flagmark">⚑</span> High-fidelity UAP data is officially restricted/classified; AARO 2025 declassification paper sets a tiered process. (Corroborated by AARO FY24 "majority unresolved due to lack of data" and NASA, both read clean.)</td><td class="type">CITE</td><td class="src">AARO 2025 Declassification Info Paper — <b>not yet read clean</b>; corrob. AARO FY24 + NASA</td><td><span class="badge b-flag">VERIFIED-PENDING-PDF</span></td></tr>
+
+<tr class="flagged"><td class="id">C07</td><td><span class="flagmark">⚑</span> Loeb &amp; Kirkpatrick (2023): within known physics, supersonic atmospheric flight must emit an optical <b>fireball</b> (eq 2, <span class="mono">L_opt ~ 150 GW</span> scaling), <b>ionization</b> shell+tail (<span class="mono">n_e ~ 1e10 cm⁻³</span>, RF), fireball luminosity ∝ distance⁵; absence ⇒ inaccurate range &amp; inflated velocity. Framing is ET-probe / known-physics, NOT exotic.</td><td class="type">CITE</td><td class="src">LK1.pdf, DRAFT 2023-03-07 — text layer read clean; <b>final venue unconfirmed</b></td><td><span class="badge b-flag">VERIFIED-PREPRINT</span></td></tr>
+
+<tr><td class="id">C08</td><td>Knuth et al. (2025, arXiv:2502.06794, "The New Science of Unidentified Aerospace-Undersea Phenomena") is a historical/field review compiling prior Mach 40–60 and &gt;100 MW claims; not a propulsion-mechanism paper.</td><td class="type">CITE</td><td class="src">arXiv:2502.06794</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr class="flagged"><td class="id">C09</td><td><span class="flagmark">⚑</span> Exotic-propulsion theory (warp/wormhole/metamaterial; AAWSAP DIRDs by Davis/Puthoff) is grey/speculative and absent from the peer-reviewed UAP-kinematics literature.</td><td class="type">NOVEL</td><td class="src">Phase 0 prior-art search, 2026-06-13</td><td><span class="badge b-novel">TO-OUR-KNOWLEDGE</span></td></tr>
+
+<tr><td class="id">A01</td><td>Taking Knuth's stated Tic Tac drop energy <span class="mono">4.3×10¹¹ J</span> at face value, it equals <b>~100 tons TNT</b> (computed 102.8). <span class="mono">[checkable · #A01]</span></td><td class="type">NUM</td><td class="src">verify_numbers.py #A01</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">A02</td><td>If the reported peak speed (~46,000 mph) is taken at face value, Loeb–Kirkpatrick eq (2) requires an optical fireball of order <b>~5.3 TW</b> (A=10 m², sea-level density) — a conspicuous signature. <span class="mono">[checkable · #A02]</span></td><td class="type">NUM</td><td class="src">verify_numbers.py #A02</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">A03</td><td>At the reported peak speed the Mach number is <b>~60</b>, so known physics requires a strong shock, sonic boom, and thermal signature. <span class="mono">[checkable · #A03]</span></td><td class="type">NUM</td><td class="src">verify_numbers.py #A03</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr><td class="id">A04</td><td>Because fireball luminosity ∝ distance⁵ and inferred speed ∝ distance, a <b>3× range error swings the inferred signature by 3⁵ = 243×</b> — modest range error collapses or inflates the apparent anomaly. <span class="mono">[checkable · #A04]</span></td><td class="type">NUM</td><td class="src">verify_numbers.py #A04</td><td><span class="badge b-verified">VERIFIED</span></td></tr>
+
+<tr class="flagged"><td class="id">O01</td><td><span class="flagmark">⚑</span> Public kinematic data <b>do not establish</b> non-human/exotic propulsion for any UAP.</td><td class="type">DERIV</td><td class="src">open challenge — human review</td><td><span class="badge b-open">OPEN-UNVERIFIED</span></td></tr>
+
+<tr class="flagged"><td class="id">O02</td><td><span class="flagmark">⚑</span> <b>Discriminating signature:</b> claimed ≫Mach-1 / high-g flight sustained <i>without</i> the LK-required signatures is the falsifiable discriminator; current evidence (GoFast parallax, AARO sensor-artifact findings, range sensitivity A04) favors velocity overestimation; only signature-absence under independently-verified range would point beyond known physics.</td><td class="type">DERIV</td><td class="src">open challenge — human review</td><td><span class="badge b-open">OPEN-UNVERIFIED</span></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>Intentionally absent from this review-build:</b> Track B / "Gedanken" material and the <span class="mono">EXPLORATORY-CONJECTURE</span> label. That label is not yet written into this repository's doctrine (CLAUDE.md / PROJECT-INSTRUCTIONS.md), so no claim may carry it yet — by the rule that every label must be true.
+</div>
+
+<footer>
+<span class="mono">An Open Dossier · CC BY 4.0 · pre-release working draft · no version asserted · no release · no DOI · no timestamp.</span><br>
+Source of truth: <a href="claim_ledger.csv">claim_ledger.csv</a> · <a href="https://github.com/m4gr4th34/dossier-UAP-propulsion">repository</a> · <a href="paper.html">self-explaining edition (Section 1)</a>
+</footer>
+</div>
+</body>
+</html>
