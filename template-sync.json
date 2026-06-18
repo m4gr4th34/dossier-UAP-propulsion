@@ -1,21 +1,30 @@
 {
-  "synced_from_commit": "8987ffe",
+  "synced_from_commit": "4d80881",
   "synced_at": "2026-06-18",
   "ritual": "three-bucket (machinery / content / structural migrations), shape-first",
   "dossier_shape": "single-result",
-  "this_sync": {
-    "adopted": [
-      "label vocabulary: FORECAST claim type + clarified OPEN-UNVERIFIED wording",
-      "placeholder-honesty CI (verification/check_placeholders.py + .github/workflows/check-placeholders.yml)",
-      "DEPLOY.md release-gate note for the placeholder check",
-      "this changelog file",
-      "structural migration D — constitution single-sourcing: filled Standing Context moved verbatim into CLAUDE.md (byte-verified), PROJECT-INSTRUCTIONS.md converted to a back-compat redirect stub, and the single-source doc ports applied (GETTING-STARTED.md, GETTING-STARTED-GENERIC.md, AUTHORING.md single-source + FORECAST hunks)"
-    ],
-    "skipped_not_applicable_single_result": [
-      "avenues.json", "survey console in index.html", "survey-consistency verifier in verify_numbers.py",
-      "AUTHORING.md survey/avenues hunks (Known-limitation note + Choosing-the-shape section)"
-    ],
-    "deferred_by_author_decision": []
-  },
-  "note": "synced_from_commit marks the reviewed-up-to point for future `git log 8987ffe..HEAD` ranges. Migration D is now fully applied (no longer deferred); only the survey-shaped machinery remains not-applicable to this single-result dossier."
+  "history": [
+    {
+      "range": "8e5cc03..8987ffe",
+      "adopted": [
+        "label vocabulary: FORECAST claim type + clarified OPEN-UNVERIFIED wording",
+        "placeholder-honesty CI (check_placeholders.py + .github/workflows/check-placeholders.yml + DEPLOY.md gate note)",
+        "structural migration D — constitution single-sourcing into CLAUDE.md (Standing Context moved verbatim, byte-verified); PROJECT-INSTRUCTIONS.md -> redirect stub; single-source doc ports (GETTING-STARTED x2, AUTHORING single-source + FORECAST hunks)"
+      ],
+      "skipped_not_applicable_single_result": ["avenues.json", "survey console", "survey verifier", "AUTHORING survey/avenues hunks"]
+    },
+    {
+      "range": "8987ffe..4d80881",
+      "adopted": [
+        "machinery (docs): strategy-room pointer with explicit cannot-push guardrail — CLAUDE.md operating-mode prose reworded (Standing Context byte-unchanged); AUTHORING.md single-source-section pointer expansion (surgical, survey hunks still skipped); GETTING-STARTED.md + GETTING-STARTED-GENERIC.md wholesale"
+      ],
+      "skipped_content": ["README.md (template's own README; this dossier's README.md is content, not a sync target)"],
+      "skipped_not_applicable_single_result": ["survey-specific machinery (none in this range)"]
+    }
+  ],
+  "deferred_manual_author_step": [
+    "Update the claude.ai Project -> Instructions box to the new strategy-room pointer (the guarded 'you CANNOT push' text in GETTING-STARTED.md Step C). This lives in claude.ai project settings, NOT the repo, so neither Code nor the chat can edit it — manual author action. Safe now because CLAUDE.md is already the full single-source constitution (Migration D done)."
+  ],
+  "deferred_by_author_decision": [],
+  "note": "synced_from_commit marks the reviewed-up-to point; the next sync is `git log 4d80881..HEAD` on the template. Migration D fully applied. The only outstanding item is a MANUAL claude.ai-settings step (above) that no commit can resolve. Survey-shaped machinery remains not-applicable to this single-result dossier."
 }
