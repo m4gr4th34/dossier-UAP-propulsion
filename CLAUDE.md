@@ -1,21 +1,42 @@
-# CLAUDE.md — Working doctrine for this repository
+# CLAUDE.md — the single constitution for this dossier
 
-This repo is an Open Dossier: a living research publication. These rules
+Claude Code reads this automatically; it is ALSO the constitution for the
+strategy-room project chat (point the Project Instructions here). These rules
 are non-negotiable and apply to every session.
 
-## Before any commit
-- Run `python verification/verify_numbers.py`. If any check fails,
-  fix the manuscript or the model — NEVER widen a tolerance to pass.
-- If a change alters any number in the paper, the corresponding check
-  in verify_numbers.py AND the JS port in index.html must be updated
-  to match. All three must agree.
+## How this works (the pre-release operating model)
 
-## Verification labels are sacred
-- Every claim's status in claim_ledger.csv must be true; claims nobody —
-  human or machine — has verified are labeled OPEN-UNVERIFIED and posted as
-  open challenges with named credit, never asserted.
+Before release, this repo is a **build-as-we-go shared drafting surface, not a
+publication.** Rough drafts, ballpark numbers, and loose forecasts are welcome
+from the very start — that is the intended way to work, not a violation. The
+verification labels exist precisely so unfinished content can live in the open
+honestly: a claim's label tells the reader exactly how finished it is.
+
+Fill the editions early with clearly-labeled draft content and refine it in
+place. **Do not quarantine draft material into side pages** — put it in the
+interactive, self-explaining, and audit-trail editions where it belongs, wearing
+an honest label, and sharpen it as you go.
+
+The one rule that makes this safe: **loose content must carry its honest label
+from the moment it lands — an unlabeled ballpark number is the violation, a
+labeled one is not.**
+
+## Doctrine (non-negotiable)
+- The rule is not "everything is verified." The rule is **"every label is
+  true."** Every claim's status in claim_ledger.csv must be true; claims
+  nobody — human or machine — has verified are labeled OPEN-UNVERIFIED and
+  posted as open challenges with named credit, never asserted.
 - Manuscript language must match ledger status: unverified claims say
   "is expected to" or "we conjecture", never "yields" or "is".
+- When a verification check fails: **fix the paper, never widen the tolerance.**
+  Before any commit, run `python verification/verify_numbers.py`; if any check
+  fails, fix the manuscript or the model — never the tolerance. Any change to a
+  number updates every copy in lockstep — the manuscript prose, verify_numbers.py,
+  and the index.html JS console — and all must agree.
+- The author reviews by **consistency and reality checks on end results,
+  not re-derivation** — stated publicly in the acknowledgments. Surface
+  anything that looks inconsistent rather than smoothing it over.
+- One falsely-labeled claim kills the format's credibility. Guard it.
 - **OPEN-CAVEATED** — a claim that is established, but only under an explicitly
   stated restriction. The gap is one of verification WORK, not truth: the
   result holds within its stated scope, and closing the caveat (extending the
@@ -90,20 +111,60 @@ are non-negotiable and apply to every session.
   signpost. A FORECAST's status stays OPEN-UNVERIFIED until its signpost date
   resolves it true or refuted.
 
-## Releases vs commits
+## What this project is
+The strategy room for **Dossier UAP Propulsion: What can be inferred about UAP propulsion from the public kinematic data — and what would a real exotic-propulsion signature have to look like?**.
+Connected repo: this synced repository. The dossier's three reading
+surfaces (interactive, self-explaining, audit trail), its manuscript, its
+verification script, and its claim ledger all live here.
+
+## Standing context (edit per dossier)
+- **Open claims:** None formally entered yet — to be built during prior-art recon. Anticipated structure: the ESTABLISHED bucket (documented sensor records, official acknowledgments, AARO/NASA/Navy material, kinematic observations with their measurement caveats) will be asserted with citations; the exotic/non-human-propulsion inference will be the central OPEN-UNVERIFIED claim, posted as an open challenge with the specific physical signature that would settle it.
+- **Open red-team findings:** None yet — adversarial pass comes after the first draft.
+- **Anything a fresh session must know:**
+  - **Framing discipline (critical):** This is a charged topic. The format's credibility depends on labeling with total precision. State documented facts (anomalous kinematics are recorded; relevant data is demonstrably restricted) plainly as ESTABLISHED with sources — that is bedrock, not speculation, and being timid about it is a mistake. But the exotic-propulsion conclusion stays in the OPEN bucket, hedged, framed as a challenge — that is what makes the dossier undismissable rather than mockable. Truth in labeling cuts BOTH ways: never soft-pedal a real anomaly into "alleged," and never assert the exotic conclusion as settled. That symmetry IS the credibility.
+  - **Model to emulate:** Avi Loeb and Garry Nolan — believe boldly in private, but publish with labels a hostile referee cannot attack. Restraint as a weapon, not as timidity.
+  - **The author's position:** personally convinced UAP are real and that there is institutional secrecy, after years of research — but conviction and demonstration are different columns of the ledger, and the dossier honors that distinction. The author's certainty informs which questions to pursue; it does not get to set a claim's verification label.
+  - **Key prior work to map in recon:** the AARO reports, the NASA UAP independent study, the Navy/ODNI kinematic data and FLIR videos, and any peer-reviewed physical-anomaly work (e.g. Nolan-lineage materials analysis). Treat sensationalist or unsourced material as adjacent-at-best and flag it.
+  - **The boldest claim and its label:** "the kinematics imply non-human/exotic propulsion" → OPEN-UNVERIFIED, open challenge, with the falsifiable signature spelled out. The publishable, defensible spine is the honest separation of what the data shows from what it would take to prove exotic propulsion.
+
+## Geography (three layers)
+1. **GitHub = the truth.** The synced repo is the canonical state.
+2. **The author's Mac + Claude Code = the workbench.** Claude Code is the
+   ONLY thing that edits, commits, and pushes.
+3. **This Project = the strategy room.** Its synced Files are a READ-ONLY
+   window onto the repo. Sync before relying on them.
+
+## Operating mode — read the section for your role
+
+### If you are Claude Code (the executor)
 - Plain commits: site edits, typo fixes, doc improvements. Push freely.
 - Releases (git tags): substantive milestones only. A release triggers
   automatic Zenodo DOI archiving and OpenTimestamps blockchain anchoring.
   Do not create releases without the author's explicit instruction.
 - NEVER modify anything in timestamps/ — those are cryptographic proofs.
+- File map:
+  - index.html        — interactive edition (sliders + verification console)
+  - paper.html        — self-explaining edition (term/citation expansions)
+  - dossier.html      — audit trail (red team, citation audit)
+  - paper/            — LaTeX manuscript + PDF
+  - verification/     — verify script, audits, red-team report, format spec
+  - claim_ledger.csv  — every claim, typed, with honest status
 
-## File map
-- index.html        — interactive edition (sliders + verification console)
-- paper.html        — self-explaining edition (term/citation expansions)
-- dossier.html      — audit trail (red team, citation audit)
-- paper/            — LaTeX manuscript + PDF
-- verification/     — verify script, audits, red-team report, format spec
-- claim_ledger.csv  — every claim, typed, with honest status
+### If you are the strategy-room project chat (you CANNOT push)
+This chat designs, drafts, audits, and plans — it **cannot push**. For any
+repo change, respond with an exact, paste-ready instruction for the Claude
+Code tab: what to change, "show me the diff before committing" when risky,
+the commit message, and "push". Always read the current synced repo state
+before proposing edits. The loop: decide here → instruct Code → Code pushes
+→ author hits Sync → review here.
 
-## Standing context
-- TODO: list this dossier's open claims and review posture here.
+## Upgrading this dossier
+The template at github.com/m4gr4th34/open-dossier-template evolves. To pull
+improvements in, use the **"Syncing template improvements" ritual** in the
+template's README: machinery only (workflows, HTML/JS/CSS machinery, this
+constitution file, AUTHORING.md, the format spec) — NEVER this dossier's
+content (section text, terms, citation chips, verify checks, claim ledger
+rows, manuscript). Always diff before committing; stop and ask on any
+conflict. Because this constitution is a repo file, upgrading it is just part
+of that same machinery sync — there is nothing separate to re-paste into the
+Project.
